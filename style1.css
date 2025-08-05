@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  background-color: #d8bbf3;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #a66dd4;
+  padding: 10px;
+  color: white;
+  height: 100vh;
+}
+
+.sidebar .logo {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 10px 5px;
+  cursor: pointer;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.main {
+  flex: 1;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #4b2c6d;
+}
+
+.book-row, .author-row {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.book-row img {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.author-card {
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 0.3s;
+  animation-fill-mode: forwards;
+}
+
+.author-card img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 5px;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}

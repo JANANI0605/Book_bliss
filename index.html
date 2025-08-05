@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="bookApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Bliss</title>
+  <link rel="stylesheet" href="style1.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-animate.min.js"></script>
+  <script src="script1.js"></script>
+</head>
+<body ng-controller="BookController">
+
+  <div class="sidebar">
+    <div class="logo">📚 BookBliss</div>
+    <ul>
+      <li>🏠 Home</li>
+      <li>🔍 Browse</li>
+      <li><a href="commu1.html">👥 Community</a></li>
+      <li>⚙️ Settings</li>
+      <li>ℹ️ About Us</li>
+      <li>🤖 AI Support</li>
+    </ul>
+  </div>
+
+  <div class="main">
+    <h1>BOOK BLISS YOUR PERFECT BOOK PARTNER</h1>
+
+    <section>
+      <h2>Best Reviewed Book of the Week →</h2>
+      <div class="book-row">
+        <img ng-repeat="book in books" ng-src="{{book}}" class="animated-book" alt="Book">
+      </div>
+    </section>
+
+    <section>
+      <h2>Recommendations →</h2>
+      <div class="book-row">
+        <img ng-repeat="rec in recommendations" ng-src="{{rec}}" class="animated-book" alt="Recommendation">
+      </div>
+    </section>
+
+    <section>
+      <h2>Authors →</h2>
+      <div class="author-row">
+        <author-card 
+          ng-repeat="author in authors" 
+          ng-name="{{author.name}}" 
+          ng-cover="{{author.cover}}">
+        </author-card>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>
